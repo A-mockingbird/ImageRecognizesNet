@@ -7,7 +7,7 @@ class vgg16(Object):
         self.input = tf.placeholder({})
     def build_network(self, scope='vgg16'):
         with tf.name_scope(scope):
-            conv1 = self.conv_op()
+            conv1 = self.conv_op(self.input, 3, , '1')
            
     def conv_op(self, conv_input, channel, depth, num):
         kernel = tf.get_variable("conv_kernel"+num, [self.conv_size, self.conv_size, channel, depth],
